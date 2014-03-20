@@ -15,11 +15,11 @@ import com.sinius15.soundrecorder.gui.AudioGui;
 public class SoundRecorder {
 
 	public ArrayList<Sound> sounds = new ArrayList<>();
-	public AudioGui gui;
+	public static AudioGui gui;
 	public YAMLFile config = new YAMLFile(false);
 	public File configFile = new File("config.yml");
 	
-	public final String VERSION = "beta1";
+	public final String VERSION = "beta2";
 	
 	public SoundRecorder(){
 		Mixer.Info[] mixerInfos = AudioSystem.getMixerInfo();

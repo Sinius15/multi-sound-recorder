@@ -52,6 +52,8 @@ public class Sound {
 				try {
 					AudioSystem.write(audioInputStream, AudioFileFormat.Type.WAVE, saveFile);
 				} catch (IOException e) {
+					SoundRecorder.gui.showErrorMessage("Could not start recording on line "+mixerInfo.getName()+"   :(" + System.lineSeparator()
+							+ "Error message: " + e.getMessage());
 					e.printStackTrace();
 				}
 			}
@@ -70,6 +72,8 @@ public class Sound {
 		try {
 			audioInputStream.close();
 		} catch (IOException e) {
+			SoundRecorder.gui.showErrorMessage("Could not finish up the recording on line "+mixerInfo.getName()+"   :(" + System.lineSeparator()
+					+ "Error message: " + e.getMessage());
 			e.printStackTrace();
 		}
 	}
