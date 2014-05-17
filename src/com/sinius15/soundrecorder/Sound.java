@@ -11,7 +11,7 @@ import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.Mixer;
 import javax.sound.sampled.TargetDataLine;
 
-public class Sound {
+public class Sound{
 
 	public Mixer mixer = null;
 	public Mixer.Info mixerInfo = null;
@@ -22,7 +22,9 @@ public class Sound {
 	public File saveFile;
 	boolean isRecording = false;
 	
-	public Sound(Mixer mixer) throws LineUnavailableException {
+	public String name;
+	
+	public Sound(Mixer mixer, String name) throws LineUnavailableException {
 		this.mixer = mixer;
 		this.mixerInfo = mixer.getMixerInfo();
 		
@@ -78,8 +80,8 @@ public class Sound {
 		}
 	}
 	
-	
-	
-	
+	public String getName(){
+		return name;
+	}
 	
 }

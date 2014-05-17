@@ -43,11 +43,18 @@ public class SoundRecorder {
 			if(mixer.getClass().getName().contains("DirectAudioDevice")){
 				if(mixerInfo.getDescription().contains("Capture")){
 					try {
-						sounds.add(new Sound(mixer));
+						sounds.add(new Sound(mixer, "Capture: " + mixer.getMixerInfo().getName()));
 					} catch (LineUnavailableException e) {
 						e.printStackTrace();
 					}
 				}
+//				if(mixerInfo.getDescription().contains("Playback")){
+//					try {
+//						sounds.add(new CaptureSound(mixer, "Playback: " + mixer.getMixerInfo().getName()));
+//					} catch (LineUnavailableException e) {
+//						e.printStackTrace();
+//					}
+//				}
 			}
 		}
 		gui.updateChecks();
